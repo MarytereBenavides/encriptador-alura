@@ -1,18 +1,18 @@
 function encriptarTexto(texto) {
     let textoEncriptado = texto.replace(/e/g, 'enter')
-                               .replace(/i/g, 'imes')
-                               .replace(/a/g, 'ai')
-                               .replace(/o/g, 'ober')
-                               .replace(/u/g, 'ufat');
+        .replace(/i/g, 'imes')
+        .replace(/a/g, 'ai')
+        .replace(/o/g, 'ober')
+        .replace(/u/g, 'ufat');
     return textoEncriptado;
 }
 
 function desencriptarTexto(texto) {
     let textoDesencriptado = texto.replace(/enter/g, 'e')
-                                  .replace(/imes/g, 'i')
-                                  .replace(/ai/g, 'a')
-                                  .replace(/ober/g, 'o')
-                                  .replace(/ufat/g, 'u');
+        .replace(/imes/g, 'i')
+        .replace(/ai/g, 'a')
+        .replace(/ober/g, 'o')
+        .replace(/ufat/g, 'u');
     return textoDesencriptado;
 }
 
@@ -38,44 +38,39 @@ function toggleOutputElements() {
     }
 }
 
-document.getElementById("encriptar").addEventListener("click", function() {
+document.getElementById("encriptar").addEventListener("click", function () {
     const inputTexto = document.getElementById("inputTexto").value;
     const textoEncriptado = encriptarTexto(inputTexto);
     document.getElementById("resultado").value = textoEncriptado;
-    toggleOutputElements(); // Verifica los elementos después de encriptar
+    toggleOutputElements();
 });
 
-document.getElementById("desencriptar").addEventListener("click", function() {
+document.getElementById("desencriptar").addEventListener("click", function () {
     const inputTexto = document.getElementById("inputTexto").value;
     const textoDesencriptado = desencriptarTexto(inputTexto);
     document.getElementById("resultado").value = textoDesencriptado;
-    toggleOutputElements(); // Verifica los elementos después de desencriptar
+    toggleOutputElements();
 });
 
 
-document.getElementById("copiar").addEventListener("click", function() {
-    // Selecciona el texto en el área de salida
+document.getElementById("copiar").addEventListener("click", function () {
     const resultado = document.getElementById("resultado");
     resultado.select();
-    resultado.setSelectionRange(0, 99999); // Para dispositivos móviles
+    resultado.setSelectionRange(0, 99999);
 
-    // Copia el texto al portapapeles
     navigator.clipboard.writeText(resultado.value).then(() => {
 
-        // Cambia el texto del botón cuando se ha copiado un texto
         this.textContent = "¡Texto copiado!";
 
-        // Restaura el texto del botón después de segundos
         setTimeout(() => {
             this.textContent = "Copiar";
         }, 8000);
 
-    }); // Cierra el bloque then()
+    });
 });
 
 
-// Restringir entrada a solo letras minúsculas y espacios
-document.getElementById("inputTexto").addEventListener("input", function() {
+document.getElementById("inputTexto").addEventListener("input", function () {
     this.value = this.value.toLowerCase();
     this.value = this.value.replace(/[^a-z\s]/g, '');
 });

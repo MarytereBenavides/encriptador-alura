@@ -1,7 +1,7 @@
-/* Estilo general del cuerpo */
+
 body {
     font-family: 'DM Serif Text', sans-serif;
-    background-color:#A7C7E7;
+    background-color:azure;
     color: #34495E;
     margin: 0;
     padding: 0;
@@ -24,21 +24,29 @@ body {
 
 h1, h2, h3, p, button {
     font-family: 'DM Serif Text', sans-serif;
+    transition: 0.4s;
 }
-/* Contenedor principal */
+
+input:focus, textarea:focus {
+    outline: none; 
+    border: 5px solid #f0ffff !important;
+    box-shadow: 0 0 5px #cccccc; 
+    transition: 0.2s;
+}
 .container {
     width: 100%;
     max-width: 1200px;
     display: flex;
-    justify-content: space-between; /* Espacio entre secciones dentro del contenedor */
+    justify-content: space-between; 
     padding: 20px;
     box-sizing: border-box;
     flex-wrap: wrap;
+    padding-top: 56px;
 }
 
-/* Secciones de entrada y salida */
+
 .input-section, .output-section {
-    flex: 1; /* Permite que ambas secciones crezcan de manera uniforme */
+    flex: 1; 
     min-width: 300px;
     margin: 10px;
     padding: 20px;
@@ -50,11 +58,11 @@ h1, h2, h3, p, button {
 }
 
 .input-section {
-    background-color: #E0F7FA; /* Color pastel para la sección de entrada */
+    background-color: #6ce8eba6; 
 }
 
 .output-section {
-    background-color: #FFF3E0; /* Color pastel para la sección de salida */
+    background-color: #254945; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -62,7 +70,7 @@ h1, h2, h3, p, button {
     display: flex;
     align-items: center;
     margin-top: 30px;
-    margin-bottom: 0; /* Reduce o elimina el margen inferior para acercarlo a los botones */
+    margin-bottom: 0; 
     font-size: 0.9rem; 
     color: #555;
 }
@@ -70,15 +78,18 @@ h1, h2, h3, p, button {
 .info-icon {
     width: 16px;
     height: 16px;
-    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    margin-right: 8px; 
 }
 
 img.muñeco {
-    display: block; /* Convierte la imagen en un elemento de bloque */
-    margin: 0 auto; /* Centra la imagen horizontalmente dentro de su contenedor */
-    width: 336px; /* Ajusta el ancho de la imagen según lo necesites */
-    height: 304px; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Asegura que la imagen se ajuste al tamaño sin distorsionarse */
+    display: block; 
+    margin: 0 auto; 
+    width: 336px; 
+    height: 304px;
+    object-fit: cover; 
+    background: #16564e;
+    border-radius: 24px;
+    box-shadow: 0px 0px 16px 20px rgb(22 86 78);
 }
 
 .input-section textarea, .output-section textarea {
@@ -88,39 +99,37 @@ img.muñeco {
     padding: 10px;
     font-size: 1.5rem;
     border-radius: 30px;
-    background-color: #D8DFE8;
+    background-color: #ffffff;
     resize: none;
     box-sizing: border-box;
-    margin-bottom: 30px; /* Añade espacio debajo del textarea */
+    margin-bottom: 30px;
 }
 
 .output-section textarea {
-    background-color: #FFFFFF; /* Cambia el fondo del textarea a blanco */
+    background-color: #b4d3d3; 
 }
 
-/* Estilos para el mensaje "Ningún mensaje fue encontrado" */
+
 .mensaje-encontrado {
     font-size: 1.5rem;
     font-family: 'DM Serif Text', sans-serif;
-    color: #2A3B61; 
-    text-align: center; /* Centrar el texto */
-    margin-bottom: 0px; /* Separación con el siguiente párrafo */
+    color: #b1acac; 
+    text-align: center;
+    margin-bottom: 0px; 
 }
 
-/* Estilos para las instrucciones */
 .instrucciones {
-    font-size: 1rem; /* Tamaño de la letra */
-    font-family: 'DM Serif Text', sans-serif; /* Fuente */
-    color: #34495E; /* Color del texto */
-    text-align: center; /* Centrar el texto */
-    margin-top: 0; /* Separación con el párrafo anterior */
+    font-size: 1rem; 
+    font-family: 'DM Serif Text', sans-serif; 
+    color: #ffffff;
+    text-align: center;
+    margin-top: 0; 
 }
 
-/* Ajuste de los botones */
 .buttons-container {
     display: flex;
     gap: 10px;
-    margin-top: 0.2rem; /* Aumenta la distancia entre los botones y el textarea */
+    margin-top: 0.2rem; 
 }
 
 .buttons-container button, #copiar {
@@ -130,17 +139,16 @@ img.muñeco {
     border-radius: 20px;
     cursor: pointer;
     box-sizing: border-box;
-    width: 100%; /* Botones ajustables en ancho */
+    width: 100%; 
 }
 
 #encriptar:hover {
-    background-color: #FF8A80; /* Un tono más intenso de rosado */
+    background-color: #00132a; 
 }
 
 #desencriptar:hover, #copiar:hover {
-    background-color: #FFD700; /* Un tono más intenso de amarillo */
+    background-color: #616161;
     color: white;
-    border-color: #FFD700;
 }
 
 
@@ -167,23 +175,12 @@ button:hover {
     opacity: 0.9;
 }
 
-/* Footer */
-.footer {
-    width: 100%;
-    background-color: #34495E;
-    color: white;
-    padding: 2px;
-    text-align: center;
-    font-size: 1rem;
-    margin-top: auto;
-    box-sizing: border-box;
-}
-
 /* Diseño responsivo */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
+        padding-top: 0;
     }
     
     .input-section, .output-section {
@@ -199,11 +196,6 @@ button:hover {
     .output-section img {
         width: 100%;
         height: auto;
-    }
-
-    .footer {
-        padding: 0.5rem; /* Asegura que el padding sea consistente en pantallas más pequeñas */
-        font-size: 0.875rem; /* Tamaño del texto más pequeño */
     }
 
     /* Ajustes para el logo */

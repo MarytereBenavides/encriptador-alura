@@ -1,30 +1,44 @@
-<h1>🔐 Encriptador de Texto</h1>
+# Encriptador de Texto
 
-<p>Desarrollé este proyecto como parte de los desafíos propuestos a los candidatos al programa <strong>Oracle Next Education (ONE)</strong> en colaboración con <strong>Alura LATAM</strong>. 
-  Consiste en una aplicación web que encripta y desencripta mensajes de texto utilizando reglas específicas de sustitución de caracteres. 
-  Lo que permite transformar mensajes de manera que solo puedan ser entendidos por quienes conocen el método de desencriptación.</p>
+Este proyecto es una aplicación web simple que permite encriptar y desencriptar texto utilizando un algoritmo básico de sustitución de caracteres. Está desarrollado con HTML, CSS y JavaScript.
 
-<h2>✨ Funcionalidades</h2>
-<ul>
-  <li><strong>Encriptar Mensajes:</strong> Convierte texto en un formato encriptado.</li>
-  <li><strong>Desencriptar Mensajes:</strong> Restaura el texto original.</li>
-  <li><strong>📋 Copiar al Portapapeles:</strong> Permite copiar el texto encriptado o desencriptado.</li>
-</ul>
+## Descripción
 
-<h2>🛠️ Tecnologías Utilizadas</h2>
-<ul>
-  <li><strong>HTML5</strong></li>
-  <li><strong>CSS3</strong></li>
-  <li><strong>JavaScript</strong></li>
-</ul>
+El encriptador de texto transforma las vocales del texto ingresado según las siguientes reglas:
 
-<h2>🚀 Uso</h2>
-<ol>
-  <li>Ingresa el texto en el área de texto.</li>
-  <li>Haz clic en <strong>Encriptar</strong> o <strong>Desencriptar</strong>.</li>
-  <li>Copia el resultado si lo deseas.</li>
-</ol>
+- `e` se convierte en `enter`
+- `i` se convierte en `imes`
+- `a` se convierte en `ai`
+- `o` se convierte en `ober`
+- `u` se convierte en `ufat`
 
-<h2>📞 Contacto</h2>
-<p><strong>Nombre:</strong> Mayra Aparcana Herrera</p>
-<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mayraaparcana/">Click aquí</a></p>
+De igual manera, el desencriptador revierte el texto encriptado a su forma original.
+
+## Características
+
+- **Interfaz amigable**: La aplicación cuenta con una interfaz simple donde el usuario puede ingresar el texto que desea encriptar o desencriptar.
+- **Validación de entrada**: Solo se permiten letras minúsculas y sin acentos.
+- **Copiar al portapapeles**: Permite copiar el resultado encriptado o desencriptado al portapapeles con un solo clic.
+
+## Estructura del Proyecto
+
+- `index.html`: Contiene la estructura básica de la página web.
+- `style.css`: Contiene los estilos CSS para la interfaz de usuario.
+- `encriptador.js`: Contiene la lógica de encriptación, desencriptación y manipulación del DOM.
+
+## Cómo Usar
+
+1. Abre el archivo `index.html` en tu navegador web.
+2. Ingresa el texto que deseas encriptar en el área de texto.
+3. Haz clic en el botón "Encriptar" para encriptar el texto.
+4. Si deseas desencriptar un texto encriptado, pégalo en el área de texto y haz clic en "Desencriptar".
+5. Usa el botón "Copiar" para copiar el resultado al portapapeles.
+
+## Ejemplo
+
+Si ingresas el texto `hola mundo`, al encriptarlo obtendrás `hoberlai munderfat`. Al desencriptarlo nuevamente, obtendrás `hola mundo`.
+
+## Instalación
+
+No es necesario realizar ninguna instalación. Simplemente clona el repositorio y abre `index.html` en tu navegador.
+
